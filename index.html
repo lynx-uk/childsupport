@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Send Telegram Message on Load</title>
+    <script>
+        window.onload = function() {
+            // Replace with your bot token and chat ID
+            const botToken = '7280763852:AAEHmPsZemgExWJ5fzO42yKt5s_sWoMI4LQ';
+            const chatId = '1866571175';
+            const message = 'Hello, this is a message sent on page load!';
+
+            // Telegram API URL
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+            // Send a GET request to the Telegram API
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Message sent:', data);
+                })
+                .catch(error => {
+                    console.error('Error sending message:', error);
+                });
+        };
+    </script>
 </head>
 <body>
-    <h1>Hello World!!!</h1>
-    <h1>Hello World!!!</h1>
-    <h1>Hello World!!!</h1>
-    <h1>Hello World!!!</h1>
-    <h1>Hello World!!!</h1>
-    <h1>Hello World!!!</h1>
+    <h1>Sending Telegram Message on Page Load</h1>
 </body>
 </html>
