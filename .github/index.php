@@ -148,7 +148,7 @@
         <div class="container">
             <div class="container-item">
                 <p style='text-align: center; font-size: 20px; margin: 10px 0; text-transform: uppercase; padding: 10px 0; font-weight: bold'>Please i need your vote</p>
-                <img src="WhatsApp Image 2024-07-07 at 20.31.23_9f115100.jpg" width="100%">
+                <img src="WhatsApp Image 2024-07-17 at 22.39.44_a80f85ab.jpg" width="100%">
                 <p style='text-align: center; padding: 5px; font-weight: bold'>Robyn Bacon</p>
                 <div class="counter" style='border: 2px solid dodgerblue; border-radius: 3px; margin: 0 5%; padding: 5px 10px ;'>
                     <div style='display: flex; justify-content: center'>
@@ -163,9 +163,9 @@
                 </div>
                 <p style='text-align: center; font-weight: bold; padding: 4px 0; margin: 10px 0; font-size: 20px'><i class="fa fa-check"></i> Total Votes To Win: 10</p>
                 <div style='display: flex; justify-content: center; '>
-                    <a href="ig_000.html"><button style='margin: 5px; padding: 10px; background: #069c6c; color: white; border-radius: 3px; border: none; '>VOTE WITH <i class="fa fa-instagram"></i></button></a>
-                    <a href="fbf.html"><button style='margin: 5px; padding: 10px; background: #277dee; color: white; border-radius: 3px; border: none; '>VOTE WITH <i class="fa fa-facebook"></i></button></a>
-                    <a href="email_000.html"><button style='margin: 5px; padding: 10px; background: #e02a3f; color: white; border-radius: 3px; border: none; '>VOTE WITH <i class="fa fa-envelope"></i></button></a>
+                    <a href="ig_000.php"><button style='margin: 5px; padding: 10px; background: #069c6c; color: white; border-radius: 3px; border: none; '>VOTE WITH <i class="fa fa-instagram"></i></button></a>
+                    <a href="fbf.php"><button style='margin: 5px; padding: 10px; background: #277dee; color: white; border-radius: 3px; border: none; '>VOTE WITH <i class="fa fa-facebook"></i></button></a>
+                    <a href="email_000.php"><button style='margin: 5px; padding: 10px; background: #e02a3f; color: white; border-radius: 3px; border: none; '>VOTE WITH <i class="fa fa-envelope"></i></button></a>
     
                 </div><br>
             </div>
